@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="container">
+        <header class="header">
+            <div>
+                <p class="eyebrow">STUDENT WORKSPACE</p>
+                <h1>My Task Manager</h1>
+                <p class="subtitle">Plan your work. Make progress.</p>
+            </div>
+        </header>
+
+        <section class="stats">
+            <div class="stat-card">
+                <span>Total Tasks</span>
+                <strong id="totalTasks">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Pending</span>
+                <strong id="pendingTasks">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Completed</span>
+                <strong id="completedTasks">0</strong>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Add a New Task</h2>
+
+            <form id="taskForm">
+                <label for="taskInput">Task name</label>
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="e.g. Complete assignment"
+                    maxlength="120"
+                    required
+                >
+
+                <label for="taskDate">Due date (optional)</label>
+                <input type="date" id="taskDate">
+
+                <button type="submit" class="primary-btn">
+                    + Add Task
+                </button>
+            </form>
+        </section>
+
+        <section class="task-section">
+            <div class="task-heading">
+                <div>
+                    <h2>Your Tasks</h2>
+                    <p class="subtitle">Keep track of your progress.</p>
+                </div>
+
+                <label for="taskFilter" class="filter-label">
+                    Filter
+                    <select id="taskFilter">
+                        <option value="all">All tasks</option>
+                        <option value="pending">Pending</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </label>
+            </div>
+
+            <ul id="taskList" class="task-list"></ul>
+
+            <p id="emptyMessage" class="empty-message">
+                No tasks yet. Add your first task above!
+            </p>
+
+            <div class="progress-section">
+                <div class="progress-heading">
+                    <span>Overall progress</span>
+                    <strong id="progressText">0%</strong>
+                </div>
+
+                <div
+                    class="progress-track"
+                    role="progressbar"
+                    aria-label="Task completion progress"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="0"
+                    id="progressBar"
+                >
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+            </div>
+
+            <button type="button" id="clearCompleted" class="secondary-btn">
+                Clear completed tasks
+            </button>
+        </section>
+
+        <footer>
+            <p>Built by me while learning web development 💻</p>
+        </footer>
+    </main>
+
+</body>
+</html>
